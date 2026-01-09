@@ -1,25 +1,28 @@
 import React, { useState } from "react";
+import Todo from "./Todo";
 
 function App() {
-  // state to store counter value
+  // Experiment-1: Counter
   const [count, setCount] = useState(0);
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Simple Counter SPA</h1>
+    <div style={{ textAlign: "center", marginTop: "30px" }}>
+      <h1>React SPA Experiments</h1>
 
-      <h2>{count}</h2>
+      {/* Experiment-1 */}
+      <h2>Experiment-1: Simple Counter SPA</h2>
+      <h3>{count}</h3>
 
-      <button onClick={() => setCount(count + 1)}>
-        Increment
-      </button>
-
+      <button onClick={() => setCount(count + 1)}>Increment</button>
       <button
         onClick={() => setCount(count - 1)}
         style={{ marginLeft: "10px" }}
       >
         Decrement
       </button>
+
+      {/* Experiment-2 */}
+      <Todo />
     </div>
   );
 }
