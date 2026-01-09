@@ -18,7 +18,7 @@ function Todo() {
 
   return (
     <div style={{ marginTop: "40px" }}>
-      <h2>Experiment-2: Simple To-Do List SPA</h2>
+      <h2>Simple To-Do List SPA</h2>
 
       <input
         type="text"

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
+import ThemeToggle from "./ThemeToggle";
 
 function App() {
   // Experiment-1: Counter
@@ -10,7 +11,7 @@ function App() {
       <h1>React SPA Experiments</h1>
 
       {/* Experiment-1 */}
-      <h2>Experiment-1: Simple Counter SPA</h2>
+      <h2>Simple Counter SPA</h2>
       <h3>{count}</h3>
 
       <button onClick={() => setCount(count + 1)}>Increment</button>
@@ -23,6 +24,9 @@ function App() {
 
       {/* Experiment-2 */}
       <Todo />
+
+      {/* Experiment-3 */}
+      <ThemeToggle />
     </div>
   );
 }
