@@ -1,35 +1,47 @@
-import React, { useState } from "react";
-import Todo from "./Todo";
-import ThemeToggle from "./ThemeToggle";
-import SimpleForm from "./SimpleForm";
+import { useState } from "react";
+import Counter from "./components/Counter";
+import Todo from "./components/Todo";
+import Form from "./components/Form";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [activeTab, setActiveTab] = useState("counter");
 
   return (
-    <div style={{ textAlign: "center", marginTop: "30px" }}>
-      <h1>React SPA Experiments</h1>
+    <div className="app soft-bg">
+      {/* Heading */}
+      <h1 className="main-title">React SPA Experiments</h1>
 
-      {/* Counter */}
-      <h2>Simple Counter</h2>
-      <h3>{count}</h3>
+      {/* Navigation buttons */}
+      <div className="nav-tabs">
+        <button
+          className={activeTab === "counter" ? "active" : ""}
+          onClick={() => setActiveTab("counter")}
+        >
+          Counter
+        </button>
 
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button
-        onClick={() => setCount(count - 1)}
-        style={{ marginLeft: "10px" }}
-      >
-        Decrement
-      </button>
+        <button
+          className={activeTab === "todo" ? "active" : ""}
+          onClick={() => setActiveTab("todo")}
+        >
+          To-Do
+        </button>
 
-      {/* To-Do */}
-      <Todo />
+        <button
+          className={activeTab === "form" ? "active" : ""}
+          onClick={() => setActiveTab("form")}
+        >
+          Form
+        </button>
+      </div>
 
-      {/* Theme Toggle */}
-      <ThemeToggle />
-
-      {/* Simple Form */}
-      <SimpleForm />
+      {/* Center content */}
+      <div className="content-box">
+        {activeTab === "counter" && <Counter />}
+        {activeTab === "todo" && <Todo />}
+        {activeTab === "form" && <Form />}
+      </div>
     </div>
   );
 }
