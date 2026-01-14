@@ -1,48 +1,30 @@
-import { useState } from "react";
-
 function Form() {
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    gender: "",
-  });
-
-  const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Form submitted successfully!");
   };
 
   return (
     <div className="card">
-      <h3>User Details Form</h3>
+      <h2>User Details Form</h2>
 
-      <input
-        name="name"
-        placeholder="Enter Name"
-        value={data.name}
-        onChange={handleChange}
-      />
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Enter Name" required />
+        <input type="email" placeholder="Enter Email" required />
+        <input type="tel" placeholder="Enter Phone Number" required />
 
-      <input
-        name="email"
-        placeholder="Enter Email"
-        value={data.email}
-        onChange={handleChange}
-      />
+        <select required>
+          <option value="">Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
 
-      <input
-        name="phone"
-        placeholder="Enter Phone Number"
-        value={data.phone}
-        onChange={handleChange}
-      />
-
-      <select name="gender" value={data.gender} onChange={handleChange}>
-        <option value="">Select Gender</option>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other</option>
-      </select>
+        {/* SUBMIT BUTTON */}
+        <div className="btn-group" style={{ marginTop: "15px" }}>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   );
 }
