@@ -22,7 +22,6 @@
   --shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* Soft background */
 .soft-bg {
   min-height: 100vh;
   background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
@@ -34,13 +33,11 @@
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Title */
 .main-title {
   font-size: 32px;
   margin-bottom: 20px;
 }
 
-/* Navigation tabs */
 .nav-tabs {
   display: flex;
   gap: 15px;
@@ -62,14 +59,12 @@
   color: var(--nav-active-text);
 }
 
-/* Center white box */
 .content-box {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-/* Card */
 .card {
   background: var(--card-bg);
   width: 380px;
@@ -79,14 +74,12 @@
   box-shadow: var(--shadow);
 }
 
-/* Inputs */
 input, select {
   width: 90%;
   padding: 8px;
   margin: 8px 0;
 }
 
-/* Buttons */
 .btn-group {
   display: flex;
   justify-content: center;
@@ -94,7 +87,6 @@ input, select {
   margin-right: 20px;
 }
 
-/* Theme Toggle Button */
 .theme-toggle {
   position: fixed;
   top: 20px;
